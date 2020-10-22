@@ -1,14 +1,28 @@
 
 .menu__item {
    padding: 13px;
+   font: 500 14px Roboto, arial, helvetica, sans-serif;
+   color: #000;
+   text-decoration: none;
+   }
+
+.menu__item_active::after {
+  display: block;
+  content: '';
+  width: 53px;
+  height: 2px;
+  background: #0056EC;
 }
+
 .menu__item:last-child; {
    padding-right: 0;
 }
+
 .wrapper {
   margin:auto;
   width:80%;
 }
+
 .logo {
   position: relative;
   padding: 40px 0;
