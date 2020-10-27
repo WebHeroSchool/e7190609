@@ -2,7 +2,7 @@
 .menu__item {
    position: relative;
    margin-right: 26px;
-   font: 500 14px Roboto, arial, helvetica, sans-serif;
+   font: bold 18px/21px robotobold, arial, helvetica, sans-serif;
    color: #000;
    text-decoration: none;
    transition: opacity .5s;
@@ -13,6 +13,7 @@
   left: 0;
   display: block;
   content: '';
+  width: 0;
   height: 3px;
   background: #0056EC;
   opacity: 0;
@@ -54,9 +55,8 @@
 
 .logo {
   position: relative;
-  padding: 40px 0;
   padding-left: 44px;
-  font: bold 24px/31px pt_serif, arial, helvetica, sans-serif;
+  font: bold 24px/32px pt_serifbold, arial, helvetica, sans-serif;
   }
 
 .logo__circle {
@@ -88,4 +88,38 @@
   align-items: center;
   display:flex;
   justify-content:space-between;
+  margin-bottom: 200px;
+}
+
+.main {
+  padding: 0 63% 300px 0;
+  background: top right no-repeat url(img/mainImg.svg);
+}
+.main__title {
+  margin: 0 0 40px 0;
+  font: bold 66px/87px pt_serifbold, arial, helvetica, sans-serif;
+}
+
+.main__title-text_highlight {
+background: #ECF3FF;
+}
+
+.main__subtitle {
+  margin: 0 0 41px 0;
+  font: 22px/25px robotobold, arial, helvetica, sans-serif;
+}
+
+.main__button {
+  display: inline-block;
+  padding: 18px 21px;
+  font: normal 18px/21px robotobold, arial, helvetica, sans-serif;
+  color: #fff;
+  background: #0056EC;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: opacity .5s;
+}
+
+.main__button:hover {
+  opacity: .5;
 }
