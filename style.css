@@ -1,8 +1,16 @@
 
+.header {
+  padding: 10px 0;
+  align-items: center;
+  display:flex;
+  justify-content:space-between;
+  margin-bottom: 210px;
+}
+
 .menu__item {
    position: relative;
    margin-right: 26px;
-   font: bold 18px/21px robotobold, arial, helvetica, sans-serif;
+   font:  18px/21px robotobold, arial, helvetica, sans-serif;
    color: #000;
    text-decoration: none;
    transition: opacity .5s;
@@ -30,7 +38,7 @@
   left: 0;
 }
 
-.menu__item:hover {
+.menu__item:hover {  /*скрываем чекбокс*/
   opacity: .5;
 }
 
@@ -78,18 +86,15 @@
  border-radius: 50%;
 }
 
+  #menu__toggle { 
+   opacity: 0;
+}
+
 .wrapper {
   margin:auto;
   width:80%;
 }
 
-.header {
-  padding: 40px 0;
-  align-items: center;
-  display:flex;
-  justify-content:space-between;
-  margin-bottom: 200px;
-}
 
 .main {
   padding: 0 63% 300px 0;
@@ -97,7 +102,7 @@
 }
 .main__title {
   margin: 0 0 40px 0;
-  font: bold 66px/87px pt_serifbold, arial, helvetica, sans-serif;
+  font: 66px/87px 'pt_serifbold', 'Arial', 'Helvetica', sans-serif;
 }
 
 .main__title-text_highlight {
@@ -106,7 +111,8 @@ background: #ECF3FF;
 
 .main__subtitle {
   margin: 0 0 41px 0;
-  font: 22px/25px robotobold, arial, helvetica, sans-serif;
+  font: 400 22px/25px robotobold, arial, helvetica, sans-serif;
+  max-width: 80%;
 }
 
 .main__button {
@@ -118,8 +124,234 @@ background: #ECF3FF;
   text-decoration: none;
   border-radius: 4px;
   transition: opacity .5s;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-name: main__button;
 }
 
 .main__button:hover {
   opacity: .5;
 }
+
+
+@keyframes main__button {  /* анимация кнопки */
+    from {
+        background-color: #0056EC;
+    }
+    50% {
+        background-color: #C8DBFB;
+    }
+  }
+
+
+
+
+@media (max-width: 1024px) {
+
+.menu__item {
+   margin-right: 24px;
+   font: 500 14px/16px robotobold, arial, helvetica, sans-serif;
+}
+
+.main__title {
+  font: 700  50px/66px pt_serifbold, arial, helvetica, sans-serif;
+  text-align: left;
+}
+.main__subtitle {
+  font: 500 18px/21px Robotobold, arial, helvetica, sans-serif;
+}
+.main__button {
+  display: inline-block;
+  padding: 14px 16px;
+  font: normal 14px/16px robotobold, arial, helvetica, sans-serif;
+}
+}
+
+
+
+
+@media (max-width: 768px) {   /*для всех меньше 768 */
+
+.header {
+  margin-top: 0;
+  margin-bottom: 40px;
+  }
+  
+.menu__btn {  /* стилизуем кнопку */
+  display: flex; /* используем flex для центрирования содержимого */
+  align-items: center;  /* центрируем содержимое кнопки */
+  position: fixed;
+  top: 48px;
+  left: 86%;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+/* сам "бургер" */
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {   
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background-color: #0056EC;
+}
+.menu__btn > span::before {
+  content: '';
+  top: -6px;
+}
+.menu__btn > span::after {
+  content: '';
+  top: 6px;
+}
+
+/* контейнер меню */
+.menu__box {
+  display: block;
+  position: fixed;
+  visibility: hidden;  
+  /*По-умолчанию оно будет скрыто — visibility: hidden, 
+  а открывается при установке галки на чекбокс.*/
+  top: 0;
+  left: 100%;
+  width: 400px;
+  height: 100%;
+  margin: 0;
+  padding: 80px 0;
+  list-style: none;
+  text-align: center;
+  background-color: #fff;
+}
+
+/* элементы меню */
+.menu__item { 
+  display: block;
+  padding: 12px 24px;
+  top:10%;
+  font:  30px/35px robotobold, arial, helvetica, sans-serif;
+  color: #000;
+  text-decoration: none;
+}
+
+.menu__item:hover {
+  background-color: #CFD8DC;
+}
+
+
+/*Открыть / закрыть меню*/
+#menu__toggle:checked ~ .menu__btn > span {
+  transform: rotate(45deg);
+}
+#menu__toggle:checked ~ .menu__btn > span::before {
+  top: 0;
+  transform: rotate(0);
+}
+#menu__toggle:checked ~ .menu__btn > span::after {
+  top: 0;
+  transform: rotate(90deg);
+}
+#menu__toggle:checked ~ .menu__box {
+  visibility: visible;
+  left: 0;
+}
+
+/*анимация окна бургера*/
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
+  transition-duration: .25s;
+}
+.menu__box {
+  transition-duration: .25s;
+}
+.menu__item {
+  transition-duration: .25s;
+}
+/* стиль для активной строки меню*/
+.menu__item_active::after {
+  position: absolute;
+  display: none;
+  content: '';
+  width: 100%;
+  height: 2px;
+  background: #0056EC;
+  left: 0;
+}
+
+.menu__item:hover {
+  opacity: .5;
+}
+
+.menu__item:hover::after {
+  position: absolute;
+  left: 0;
+  display: block;
+  content: '';
+  width: 100%;
+  height: 3px;
+  background: #0056EC;
+}
+
+.menu__item:hover:after, .menu__item_active:after {
+  opacity: 1;
+  width: 100%;   /*длина подчеркивания*/
+}
+
+.menu__item:last-child {
+  margin-right: 0;
+}
+
+
+.logo {
+  color: transparent;
+  position: relative;
+  }
+
+.logo__circle {
+  position: absolute;
+  left: -10%;
+  top: 50%;
+  transform: translateY(35%);
+  width: 28px;
+  height: 28px;
+  background: #0056EC;
+  border-radius: 50%;
+  opacity: .7;
+}
+.logo__circle_color_blue {
+   left: -8%;
+ top: 56%;
+ background: #C8DBFB;
+ border-radius: 50%;
+}
+/* остальные стили страницы" */
+.main {  /* основной блок" */
+  text-align: center;
+  padding: 92% 0 0;
+  background-size: 100%;
+  background-position: top center;
+  }
+.main__title {
+  margin-bottom: 35px;
+  text-align: center;
+  font: 700 30px/40px pt_serifbold, arial, helvetica, sans-serif;
+}
+.main__subtitle {
+  text-align: center;
+  margin: 0;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  font: 16px/19px robotobold, arial, helvetica, sans-serif;
+  max-width: 90%;
+}
+
+.main__button {
+  font: 14px/16px robotobold, arial, helvetica, sans-serif;
+   padding: 14px 16px;
+  }
+
+
+
