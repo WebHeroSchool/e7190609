@@ -85,7 +85,7 @@
   border-radius: 50%;
 }
 
-#menu__toggle { 
+#menu__toggle {
   opacity: 0;
 }
 
@@ -132,7 +132,6 @@
   opacity: .5;
 }
 
-
 @keyframes main__button {  /* анимация кнопки */
   from {
       background-color: #0056EC;
@@ -143,16 +142,15 @@
 }
 
 @media (max-width: 1366px) {
-
 .wrapper {
   margin: auto;
   width: 69%;
 }
 .header {
-  margin-top:20px; 
+  margin-top:20px;
   margin-bottom: 120px;
 }
-.main { 
+.main {
   padding: 0 50% 100px 0;
   text-align: left;
   background-size: 60%;
@@ -170,32 +168,27 @@
   font: 500 18px/21px Robotobold, arial, helvetica, sans-serif;
 }
 .main__button {
-  position: absolute;
+  /*position: absolute;*/
   left: 219px;
   padding: 14px 16px;
   font: normal 14px/16px robotobold, arial, helvetica, sans-serif;
 }
 }
-
-
 @media (max-width: 1024px) {
-
 .wrapper {
   margin: auto;
   width: 92%;
 }
 .header {
-  margin-top:20px; 
+  margin-top:20px;
   margin-bottom: 120px;
 }
-
-.main { 
+.main {
   padding: 0 50% 300px 0;
   text-align: left;
   background-size: 60%;
   background: 50% top right;
   }
-
 .menu__item {
   margin-right: 24px;
   font: 500 14px/16px robotobold, arial, helvetica, sans-serif;
@@ -209,21 +202,18 @@
   font: 500 18px/21px Robotobold, arial, helvetica, sans-serif;
 }
 .main__button {
-  position: absolute;
+  /*position: absolute;*/
   left: 46px;
   padding: 14px 16px;
   font: normal 14px/16px robotobold, arial, helvetica, sans-serif;
 }
 }
-
 @media (max-width: 768px) {   /*для всех меньше 768 */
-
 .header {
   margin-top: 0;
   margin-bottom: 40px;
   }
-
-.menu__btn {  /* стилизуем кнопку */
+.menu__btn {  /* стиль кнопки бургера */
   display: flex; /* используем flex для центрирования содержимого */
   align-items: center;  /* центрируем содержимое кнопки */
   position: fixed;
@@ -233,11 +223,10 @@
   cursor: pointer;
   z-index: 1;
 }
-
 /*бургер*/
 .menu__btn > span,
 .menu__btn > span::before,
-.menu__btn > span::after {   
+.menu__btn > span::after {
   display: block;
   position: absolute;
   width: 100%;
@@ -252,12 +241,10 @@
   content: '';
   top: 6px;
 }
-/* контейнер меню */
-.menu__box {
+.menu__box {   /* контейнер меню */
   display: block;
   position: fixed;
-  visibility: hidden;  
-  /*По-умолчанию оно будет скрыто — visibility: hidden, 
+  visibility: hidden;  /*По-умолчанию оно будет скрыто — visibility: hidden,
   а открывается при установке галки на чекбокс.*/
   top: 0;
   left: 100%;
@@ -269,8 +256,7 @@
   text-align: center;
   background-color: #fff;
 }
-/* элементы меню */
-.menu__item { 
+.menu__item {    /* элементы меню */
   display: block;
   padding: 12px 24px;
   top:10%;
@@ -281,8 +267,7 @@
 .menu__item:hover {
   background-color: #CFD8DC;
 }
-/*Открыть / закрыть меню*/
-#menu__toggle:checked ~ .menu__btn > span {
+#menu__toggle:checked ~ .menu__btn > span { /*Открыть / закрыть меню*/
   transform: rotate(45deg);
 }
 #menu__toggle:checked ~ .menu__btn > span::before {
@@ -297,10 +282,8 @@
   visibility: visible;
   left: 0;
 }
-/*анимация окна бургера*/
-.menu__btn > span,
-.menu__btn > span::before,
-.menu__btn > span::after {
+.menu__btn > span, .menu__btn > span::before,
+.menu__btn > span::after {   /*анимация окна бургера*/
   transition-duration: .25s;
 }
 .menu__box {
@@ -378,9 +361,12 @@
   font: 16px/19px robotobold, arial, helvetica, sans-serif;
   max-width: 90%;
 }
-.main__button {  
-  position: absolute;
-  left: 84px;
+.main__button {
+  display: flex;
+  justify-content: center;
+  max-width: 55%;
+  position: relative;
   font: 14px/16px robotobold, arial, helvetica, sans-serif;
   padding: 14px 16px;
   }
+}
