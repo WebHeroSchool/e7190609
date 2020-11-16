@@ -348,6 +348,7 @@
   background-size: 100%;
   background-position: top center;
   }
+
 .main__title {
   margin-bottom: 35px;
   text-align: center;
@@ -369,4 +370,5 @@
   font: 14px/16px robotobold, arial, helvetica, sans-serif;
   padding: 14px 16px;
   }
+  
 }
