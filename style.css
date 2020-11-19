@@ -132,7 +132,7 @@
   opacity: .5;
 }
 
-@keyframes main__button {  
+@keyframes main__button {  /*анимация кнопки */
   from {
       background-color: #0056EC;
   }
