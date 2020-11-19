@@ -132,7 +132,7 @@
   opacity: .5;
 }
 
-@keyframes main__button {  /* анимация кнопки */
+@keyframes main__button {  
   from {
       background-color: #0056EC;
   }
@@ -370,5 +370,5 @@
   font: 14px/16px robotobold, arial, helvetica, sans-serif;
   padding: 14px 16px;
   }
-  
+
 }
