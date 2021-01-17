@@ -37,7 +37,7 @@
   left: 0;
 }
 
-.menu__item:hover {  /*скрываем чекбокс*/
+.menu__item:hover {
   opacity: .5;
 }
 
@@ -132,7 +132,7 @@
   opacity: .5;
 }
 
-@keyframes main__button {  /* анимация кнопки */
+@keyframes main__button {
   from {
       background-color: #0056EC;
   }
@@ -146,49 +146,56 @@
   margin: auto;
   width: 69%;
 }
+
 .header {
   margin-top:20px;
   margin-bottom: 120px;
 }
+
 .main {
   padding: 0 50% 100px 0;
   text-align: left;
   background-size: 60%;
   background: 50% top right;
   }
+
 .main__title {
   font: 700  50px/66px pt_serifbold, arial, helvetica, sans-serif;
 }
+
 .menu__item {
   margin-right: 24px;
   font: 500 14px/16px robotobold, arial, helvetica, sans-serif;
 }
+
 .main__subtitle {
   margin-bottom: 40px;
   font: 500 18px/21px Robotobold, arial, helvetica, sans-serif;
 }
 .main__button {
-  /*position: absolute;*/
   left: 219px;
   padding: 14px 16px;
   font: normal 14px/16px robotobold, arial, helvetica, sans-serif;
 }
-}
+
 @media (max-width: 1024px) {
 .wrapper {
   margin: auto;
   width: 92%;
 }
+
 .header {
   margin-top:20px;
   margin-bottom: 120px;
 }
+
 .main {
   padding: 0 50% 300px 0;
   text-align: left;
   background-size: 60%;
   background: 50% top right;
   }
+
 .menu__item {
   margin-right: 24px;
   font: 500 14px/16px robotobold, arial, helvetica, sans-serif;
@@ -202,20 +209,20 @@
   font: 500 18px/21px Robotobold, arial, helvetica, sans-serif;
 }
 .main__button {
-  /*position: absolute;*/
   left: 46px;
   padding: 14px 16px;
   font: normal 14px/16px robotobold, arial, helvetica, sans-serif;
 }
-}
-@media (max-width: 768px) {   /*для всех меньше 768 */
+
+@media (max-width: 768px) {
 .header {
   margin-top: 0;
   margin-bottom: 40px;
   }
-.menu__btn {  /* стиль кнопки бургера */
-  display: flex; /* используем flex для центрирования содержимого */
-  align-items: center;  /* центрируем содержимое кнопки */
+
+.menu__btn {
+  display: flex;
+  align-items: center;
   position: fixed;
   left: 86%;
   width: 25px;
@@ -223,7 +230,7 @@
   cursor: pointer;
   z-index: 1;
 }
-/*бургер*/
+
 .menu__btn > span,
 .menu__btn > span::before,
 .menu__btn > span::after {
@@ -233,19 +240,21 @@
   height: 3px;
   background-color: #0056EC;
 }
+
 .menu__btn > span::before {
   content: '';
   top: -6px;
 }
+
 .menu__btn > span::after {
   content: '';
   top: 6px;
 }
-.menu__box {   /* контейнер меню */
+
+.menu__box {
   display: block;
   position: fixed;
-  visibility: hidden;  /*По-умолчанию оно будет скрыто — visibility: hidden,
-  а открывается при установке галки на чекбокс.*/
+  visibility: hidden;
   top: 0;
   left: 100%;
   width: 400px;
@@ -256,7 +265,8 @@
   text-align: center;
   background-color: #fff;
 }
-.menu__item {    /* элементы меню */
+
+.menu__item {
   display: block;
   padding: 12px 24px;
   top:10%;
@@ -264,26 +274,31 @@
   color: #000;
   text-decoration: none;
 }
+
 .menu__item:hover {
   background-color: #CFD8DC;
 }
-#menu__toggle:checked ~ .menu__btn > span { /*Открыть / закрыть меню*/
+
+#menu__toggle:checked ~ .menu__btn > span {
   transform: rotate(45deg);
 }
+
 #menu__toggle:checked ~ .menu__btn > span::before {
   top: 0;
   transform: rotate(0);
 }
+
 #menu__toggle:checked ~ .menu__btn > span::after {
   top: 0;
   transform: rotate(90deg);
 }
+
 #menu__toggle:checked ~ .menu__box {
   visibility: visible;
   left: 0;
 }
 .menu__btn > span, .menu__btn > span::before,
-.menu__btn > span::after {   /*анимация окна бургера*/
+.menu__btn > span::after {
   transition-duration: .25s;
 }
 .menu__box {
@@ -292,7 +307,7 @@
 .menu__item {
   transition-duration: .25s;
 }
-/* стиль для активной строки меню*/
+
 .menu__item_active::after {
   position: absolute;
   display: none;
@@ -316,7 +331,7 @@
 }
 .menu__item:hover:after, .menu__item_active:after {
   opacity: 1;
-  width: 100%;   /*длина подчеркивания*/
+  width: 100%;
 }
 .menu__item:last-child {
   margin-right: 0;
@@ -342,7 +357,7 @@
   background: #C8DBFB;
   border-radius: 50%;
 }
-.main {  /* основной блок" */
+.main {
   text-align: center;
   padding: 92% 0 0;
   background-size: 100%;
@@ -370,5 +385,4 @@
   font: 14px/16px robotobold, arial, helvetica, sans-serif;
   padding: 14px 16px;
   }
-  
 }
